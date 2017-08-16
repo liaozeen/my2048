@@ -113,6 +113,7 @@ function updateBoardView(){
 
     $('.number-cell').css('line-height',cellSideLength+'px');
     $('.number-cell').css('font-size',0.6*cellSideLength+'px');
+    $('.number-cell').css('border-radius',0.02*cellSideLength+'px');
 }
 
 function generateOneNumber(){
@@ -211,12 +212,12 @@ document.addEventListener('touchstart',function(event){
     console.log(event);
 });
 
-/*
+
 //防止滑动时网页跟着上下滑动
 document.addEventListener('touchmove',function(event){
     event.preventDefault();
 });
-*/
+
 
 //添加触摸结束监听事件
 document.addEventListener('touchend',function(event){

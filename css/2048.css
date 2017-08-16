@@ -37,9 +37,11 @@ header p{
 }
 
 #grid-container{
+	/*
 	width: 460px;
 	height:460px;
 	padding: 20px;
+	*/
 
 	margin: 50px auto;
 	background-color: #bbada0;
@@ -49,9 +51,12 @@ header p{
 }
 
 .grid-cell{
+	/*
 	width: 100px;
 	height: 100px;
+
 	border-radius: 6px;
+	*/
 	background-color: #ccc0b3;
 
 	position: absolute;
