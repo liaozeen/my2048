@@ -162,8 +162,12 @@ function generateOneNumber(){
 
 //当玩家按下方向键时，游戏响应（实现基于玩家响应的游戏循环）
 $(document).keydown(function(event) {
+
     switch(event.keyCode){
         case 37: //向左
+            //防止按方向键时网页跟着上下滑动
+            event.preventDefault();
+
             //判断是否可以向左移动
             if(moveLeft()){
                 //为了更流畅地显示游戏动画效果，延迟执行以下函数
@@ -174,18 +178,21 @@ $(document).keydown(function(event) {
             }
             break;
         case 38: //向上
+            event.preventDefault();
             if(moveUp()){
                setTimeout("generateOneNumber()",210);
                setTimeout("isgameover()",300);
             }
             break;
         case 39: //向右
+            event.preventDefault();
             if(moveRight()){
                setTimeout("generateOneNumber()",210);
                setTimeout("isgameover()",300);
             }
             break;
         case 40: //向下
+            event.preventDefault();
             if(moveDown()){
               setTimeout("generateOneNumber()",210);
               setTimeout("isgameover()",300);
@@ -202,9 +209,29 @@ document.addEventListener('touchstart',function(event){
     starty = event.touches[0].pageY;
 
     console.log(event);
+});
+
+/*
+//防止滑动时网页跟着上下滑动
+document.addEventListener('touchmove',function(event){
+    event.preventDefault();
+});
+*/
+
+//添加触摸结束监听事件
+document.addEventListener('touchend',function(event){
+    endx = event.changedTouches[0].pageX;
+    endy = event.changedTouches[0].pageY;
+
+    console.log(event);
 
     var deltax = endx - startx;
     var deltay = endy - starty;
+
+    //当触碰移动范围小于一定值，被认为没有滑动
+    if(Math.abs(deltax)<0.3*documentWidth && Math.abs(deltay)<0.3*documentWidth){
+        return;
+    }
 
     if(Math.abs(deltax)>=Math.abs(deltay)){
         if(deltax>0){
@@ -237,13 +264,6 @@ document.addEventListener('touchstart',function(event){
             }
         }
     }
-});
-//添加触摸结束监听事件
-document.addEventListener('touchend',function(event){
-    endx = event.changedTouches[0].pageX;
-    endy = event.changedTouches[0].pageY;
-
-    console.log(event);
 });
 
 function isgameover(){
