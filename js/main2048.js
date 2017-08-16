@@ -4,6 +4,12 @@ var board = new Array();
 var score = 0;
 var hasConflicted = new Array();
 
+//初始化触碰滑动前后的两个坐标值
+var startx = 0;
+var starty = 0;
+var endx = 0;
+var endy = 0;
+
 //当文档加载完后，启动主函数
 $(document).ready(function(){
     //实现移动端的准备工作
@@ -188,6 +194,56 @@ $(document).keydown(function(event) {
         default://按下非方向键无效
             break;
     }
+});
+
+//添加触摸开始监听事件
+document.addEventListener('touchstart',function(event){
+    startx = event.touches[0].pageX;
+    starty = event.touches[0].pageY;
+
+    console.log(event);
+
+    var deltax = endx - startx;
+    var deltay = endy - starty;
+
+    if(Math.abs(deltax)>=Math.abs(deltay)){
+        if(deltax>0){
+            //向右滑动
+            if(moveRight()){
+               setTimeout("generateOneNumber()",210);
+               setTimeout("isgameover()",300);
+            }
+        }
+        else{
+            //向左滑动
+            if(moveLeft()){
+                setTimeout("generateOneNumber()",210);
+                setTimeout("isgameover()",300);
+            }
+        }
+    }else{
+        if(deltay>0){
+            //向下滑动
+            if(moveDown()){
+              setTimeout("generateOneNumber()",210);
+              setTimeout("isgameover()",300);
+            }
+        }
+        else{
+            //向上滑动
+            if(moveUp()){
+               setTimeout("generateOneNumber()",210);
+               setTimeout("isgameover()",300);
+            }
+        }
+    }
+});
+//添加触摸结束监听事件
+document.addEventListener('touchend',function(event){
+    endx = event.changedTouches[0].pageX;
+    endy = event.changedTouches[0].pageY;
+
+    console.log(event);
 });
 
 function isgameover(){
