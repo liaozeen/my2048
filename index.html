@@ -7,7 +7,7 @@
 </head>
 <body>
 	<header>
-		<h1>2048</h1>
+		<h1>个性化2048</h1>
 		<a href="javascript:newgame();" id="newgamebutton">New Game</a>
 		<p id="gamescore">分数：<span id="score">0</span></p>
 		<div id="addscore"></div>
@@ -34,6 +34,49 @@
 		<div class="grid-cell" id="grid-cell-3-2"></div>
 		<div class="grid-cell" id="grid-cell-3-3"></div>
 	</div>
+
+	<div class="container">
+	<form id="contact">
+   	<h3>自定义你的2048</h3>
+    <h4>在对应数字的输入栏里输入文字</h4>
+    <fieldset>
+      <input placeholder="2" type="text" id="num1" value="2" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="4" type="text" id="num2" value="4"required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="8" type="text" id="num3" value="8" tabindex="3" required>
+    </fieldset>
+    <fieldset>
+      <input placeholder="16" type="text" id="num4" value="16">
+    </fieldset>
+    <fieldset>
+      <input placeholder="32" type="text" id="num5" value="32">
+    </fieldset>
+     <fieldset>
+      <input placeholder="64" type="text" id="num6" value="64">
+    </fieldset>
+     <fieldset>
+      <input placeholder="128" type="text" id="num7" value="128">
+    </fieldset>
+     <fieldset>
+      <input placeholder="256" type="text" id="num8" value="256">
+    </fieldset>
+     <fieldset>
+      <input placeholder="512" type="text" id="num9" value="512">
+    </fieldset>
+     <fieldset>
+      <input placeholder="1024" type="text" id="num10" value="1024">
+    </fieldset>
+     <fieldset>
+      <input placeholder="2048" type="text" id="num11" value="2048">
+    </fieldset>
+    <fieldset>
+      <button name="submit" type="submit"  id="contact-submit" >提交</button>
+    </fieldset>
+  </form>
+</div>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/support2048.js"></script>
 	<script type="text/javascript" src="js/showanimation2048.js"></script>

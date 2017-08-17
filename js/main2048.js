@@ -1,7 +1,22 @@
 //游戏数据
 //当前board为一维数组
 var board = new Array();
+//用于替代原来的数字显示在棋盘上
+var viewboard = {
+    2:2,
+    4:4,
+    8:8,
+    16:16,
+    32:32,
+    64:64,
+    128:128,
+    256:256,
+    512:512,
+    1024:1024,
+    2048:2048,
+};
 var score = 0;
+//存储每次移动后score增加部分的分数
 var added = 0;
 var hasConflicted = new Array();
 
@@ -104,8 +119,11 @@ function updateBoardView(){
                 //根据不同的值设置不同的背景色和文字颜色
                 theNumberCell.css('background-color',getNumberBackgroundColor(board[i][j]));
                 theNumberCell.css('color',getNumberColor(board[i][j]));
-                //显示数字
-                theNumberCell.text(board[i][j]);
+                //显示数字或其他文字
+                if(isNaN(showtext(board[i][j]))){
+                    theNumberCell.css('font-size',20);
+                }
+                theNumberCell.text(showtext(board[i][j]));
             }
 
             hasConflicted[i][j] = false;
@@ -113,7 +131,6 @@ function updateBoardView(){
     }
 
     $('.number-cell').css('line-height',cellSideLength+'px');
-    $('.number-cell').css('font-size',0.6*cellSideLength+'px');
     $('.number-cell').css('border-radius',0.02*cellSideLength+'px');
 }
 
@@ -205,6 +222,19 @@ $(document).keydown(function(event) {
     }
 });
 
+//获取表单的数据，并更改viewboard的属性的值
+$('#contact-submit').click(function(){
+     for(var i=1;i<=11;i++){
+        var val = $('#num'+ i).val();
+        viewboard[Math.pow(2,i)] = val;
+    }
+
+    updateBoardView();
+    newgame();
+    //返回false，可使提交表单后不刷新页面
+    return false;
+});
+
 //添加触摸开始监听事件
 var gridContainer = document.getElementById("grid-container");
 
@@ -214,8 +244,6 @@ gridContainer.addEventListener('touchstart',function(event){
 
     startx = event.touches[0].pageX;
     starty = event.touches[0].pageY;
-
-    console.log(event);
 });
 
 //添加触摸结束监听事件
@@ -230,7 +258,7 @@ gridContainer.addEventListener('touchend',function(event){
     var deltay = endy - starty;
 
     //当触碰移动范围小于一定值，被认为没有滑动
-    if(Math.abs(deltax)<0.01*documentWidth && Math.abs(deltay)<0.01*documentWidth){
+    if(Math.abs(deltax)<0.01*documentWidth && Math.abs(deltay)<0.01 *documentWidth){
         return;
     }
 
@@ -329,10 +357,10 @@ function moveLeft(){
 
     //加分动画效果
     showAddAnimation(added);
-
     //showMoveAnimation()运行需要200毫秒，而完成整个for循环只需几毫秒
     //所以需要延迟运行updateBoardView()才会出现移动动画效果
     setTimeout("updateBoardView()",200);
+    console.log(viewboard)
     return true;
 }
 

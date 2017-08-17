@@ -156,3 +156,16 @@ function nomove(board){
 
 	return true;
 }
+
+function formsubmit(){
+
+    for(var i=1;i<=11;i++){
+    	console.log(i)
+	    var inputid = '#num'+ i;
+	    var val = $(inputid).val();
+	    viewboard[Math.pow(2,i)] = val;
+    }
+
+    console.log(viewboard);
+    return false;
+}
