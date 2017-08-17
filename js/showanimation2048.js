@@ -40,7 +40,7 @@ function showAddAnimation(score){
 	}
 
 	addscore.animate({
-		top: -60,
+		top: -70,
 	}, 400);
 
 	added = 0;

@@ -230,7 +230,7 @@ gridContainer.addEventListener('touchend',function(event){
     var deltay = endy - starty;
 
     //当触碰移动范围小于一定值，被认为没有滑动
-    if(Math.abs(deltax)<0.3*documentWidth && Math.abs(deltay)<0.3*documentWidth){
+    if(Math.abs(deltax)<0.1*documentWidth && Math.abs(deltay)<0.1*documentWidth){
         return;
     }
 
