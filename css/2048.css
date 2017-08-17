@@ -69,7 +69,8 @@ header p{
 	padding: 20px;
 	*/
 
-	margin: 65px auto;
+	margin: 60px auto;
+	margin-bottom: 20px;
 	background-color: #bbada0;
 
 	border-radius: 10px;
@@ -109,6 +110,29 @@ header p{
 	color:#7F8C8D;
 }
 
+#diy2048{
+	cursor:pointer;
+	width:100%;
+	border:none;
+	background:#5DADE2;
+	color:#FFF;
+	margin:0 auto;
+	padding:10px;
+
+	font-size:15px;
+	font-weight: 700;
+}
+
+#diy2048:hover {
+	background:#09C;
+	-webkit-transition:background 0.3s ease-in-out;
+	-moz-transition:background 0.3s ease-in-out;
+	transition:background-color 0.3s ease-in-out;
+}
+
+#diy2048:active {
+	box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+
 /*表单*/
 .container {
 	max-width:320px;
@@ -121,6 +145,7 @@ header p{
 	background:#F9F9F9;
 	padding:25px;
 	margin:5px 0;
+	display: none;
 }
 
 #contact h3 {
@@ -154,7 +179,7 @@ input {
 }
 
 
-button {
+#contact-submit{
 	cursor:pointer;
 	width:100%;
 	border:none;
@@ -165,11 +190,11 @@ button {
 	font-size:15px;
 }
 
-button:hover {
+#contact-submit:hover {
 	background:#09C;
 	-webkit-transition:background 0.3s ease-in-out;
 	-moz-transition:background 0.3s ease-in-out;
 	transition:background-color 0.3s ease-in-out;
 }
 
-button:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+#contact-submit:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }

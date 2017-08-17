@@ -224,6 +224,21 @@ $(document).keydown(function(event) {
     }
 });
 
+//展开和隐藏表单
+$('#diy2048').click(function(){
+    var display = $('#contact').css('display');
+    if(display=='none'){
+        $('#contact').css('display','block');
+        $('#diy2048').text('关闭表单');
+        $('#diy2048').css('background','#E74C3C');
+    }else{
+        $('#contact').css('display','none');
+        $('#diy2048').text('自定义你的2048');
+        $('#diy2048').css('background','#5DADE2');
+
+    }
+})
+
 //获取表单的数据，并更改viewboard的属性的值
 $('#contact-submit').click(function(){
      for(var i=1;i<=11;i++){
