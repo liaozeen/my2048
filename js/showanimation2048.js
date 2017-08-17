@@ -5,7 +5,7 @@ function showNumberWithAnimation(i,j,randNumber){
 	if(isNaN(showtext(randNumber))){
 		numberCell.css('font-size',16);
 	}else{
-		numberCell.css('font-size',0.6*cellSideLength+'px');
+		numberCell.css('font-size',0.4*cellSideLength);
 	}
 
 	//显示数字或文字

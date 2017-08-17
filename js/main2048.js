@@ -123,7 +123,7 @@ function updateBoardView(){
                 if(isNaN(showtext(board[i][j]))){
                     theNumberCell.css('font-size',16);
                 }else{
-                    theNumberCell.css('font-size',0.6*cellSideLength)
+                    theNumberCell.css('font-size',0.4*cellSideLength)
                 }
                 theNumberCell.text(showtext(board[i][j]));
             }
@@ -307,7 +307,6 @@ function gameover(){
 }
 
 function moveLeft(){
-    console.log(added);
     //判断当前是否可以向左移动
     if(!canMoveLeft(board)){
         return false;
