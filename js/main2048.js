@@ -121,7 +121,9 @@ function updateBoardView(){
                 theNumberCell.css('color',getNumberColor(board[i][j]));
                 //显示数字或其他文字
                 if(isNaN(showtext(board[i][j]))){
-                    theNumberCell.css('font-size',20);
+                    theNumberCell.css('font-size',16);
+                }else{
+                    theNumberCell.css('font-size',0.6*cellSideLength)
                 }
                 theNumberCell.text(showtext(board[i][j]));
             }
@@ -252,8 +254,6 @@ gridContainer.addEventListener('touchend',function(event){
     endx = event.changedTouches[0].pageX;
     endy = event.changedTouches[0].pageY;
 
-    console.log(event);
-
     var deltax = endx - startx;
     var deltay = endy - starty;
 
@@ -360,7 +360,6 @@ function moveLeft(){
     //showMoveAnimation()运行需要200毫秒，而完成整个for循环只需几毫秒
     //所以需要延迟运行updateBoardView()才会出现移动动画效果
     setTimeout("updateBoardView()",200);
-    console.log(viewboard)
     return true;
 }
 

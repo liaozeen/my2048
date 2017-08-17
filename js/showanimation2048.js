@@ -3,7 +3,9 @@ function showNumberWithAnimation(i,j,randNumber){
 
 	//判断数字或文字
 	if(isNaN(showtext(randNumber))){
-		numberCell.css('font-size',20);
+		numberCell.css('font-size',16);
+	}else{
+		numberCell.css('font-size',0.6*cellSideLength+'px');
 	}
 
 	//显示数字或文字
