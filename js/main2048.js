@@ -2,6 +2,7 @@
 //当前board为一维数组
 var board = new Array();
 var score = 0;
+var added = 0;
 var hasConflicted = new Array();
 
 //初始化触碰滑动前后的两个坐标值
@@ -278,6 +279,7 @@ function gameover(){
 }
 
 function moveLeft(){
+    console.log(added);
     //判断当前是否可以向左移动
     if(!canMoveLeft(board)){
         return false;
@@ -312,6 +314,7 @@ function moveLeft(){
                         board[i][j] = 0;
                         //分数叠加,叠加值为合成后的数字
                         score += board[i][k];
+                        added += board[i][k];
                         //通知视图更改分数
                         updateScore(score);
 
@@ -323,6 +326,9 @@ function moveLeft(){
             }
         }
     }
+
+    //加分动画效果
+    showAddAnimation(added);
 
     //showMoveAnimation()运行需要200毫秒，而完成整个for循环只需几毫秒
     //所以需要延迟运行updateBoardView()才会出现移动动画效果
@@ -355,6 +361,7 @@ function moveUp(){
                         board[i][j] = 0;
 
                         score += board[k][j];
+                        added += board[k][j];
                         updateScore(score);
 
                         hasConflicted[k][j] = true;
@@ -364,6 +371,7 @@ function moveUp(){
             }
         }
     }
+    showAddAnimation(added);
 
     setTimeout("updateBoardView()",200);
     return true;
@@ -394,6 +402,7 @@ function moveRight(){
                         board[i][j] = 0;
 
                         score += board[i][k];
+                        added += board[i][k];
                         updateScore(score);
 
                         hasConflicted[i][k] =true;
@@ -403,6 +412,7 @@ function moveRight(){
             }
         }
     }
+    showAddAnimation(added);
 
     setTimeout("updateBoardView()",200);
     return true;
@@ -434,6 +444,7 @@ function moveDown(){
                         board[i][j] = 0;
 
                         score += board[k][j];
+                        added += board[k][j];
                         updateScore(score);
 
                         hasConflicted[k][j] = true;
@@ -443,6 +454,8 @@ function moveDown(){
             }
         }
     }
+    showAddAnimation(added);
+
     setTimeout("updateBoardView()",200);
     return true;
 }

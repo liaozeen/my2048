@@ -27,5 +27,21 @@ function showMoveAnimation(fromx,fromy,tox,toy){
 
 function updateScore(score){
 	$("#score").text(score);
+}
 
+function showAddAnimation(score){
+	var addscore = $('#addscore');
+
+	//显示加分
+	if(score!=0){
+		addscore.css('top',"90%");
+		addscore.css("color",'#7F8C8D');
+		addscore.text("+"+score);
+	}
+
+	addscore.animate({
+		top: -60,
+	}, 400);
+
+	added = 0;
 }
