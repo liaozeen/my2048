@@ -1,26 +1,39 @@
 body{
+	width: 100%;
 	font-family: Arial;
 	color:#777;
-	background:#0CF;
+	background:#7DB9DE;
+	position: relative;
 }
 
 header{
-	display: block;
-	width: 320px;
-	text-align: center;
-	position: relative;
-	margin: 0 auto;
+	width:100%;
+	max-width:400px;
+	height: 140px;
+	margin:0 auto;
+	position:relative;
+
 }
 
 h1{
-	font-size: 40px;
+	font-size: 30px;
 	font-weight: bold;
-}
-
-#newgamebutton{
-	display: block;
+	color: white;
 
 	width: 100px;
+	height: 100px;
+
+	line-height: 50px;
+	text-align: center;
+	left: 5%;
+
+	position: absolute;
+
+}
+
+#versions,#newgamebutton{
+	width: 100px;
+	height: 20px;
 	padding: 10px 10px;
 	background-color: #8f7a66;
 
@@ -29,32 +42,38 @@ h1{
 	text-decoration: none;
 	text-align: center;
 	font-size: 14px;
-
 	position: absolute;
-	top: 120%;
-	left:5%;
+
+	left: 25%;
+	right: 25%;
+	margin: 0 auto;
+
+	margin-top: 25px;
+}
+
+#versions{
+	top: 50px;
 }
 
 #gamescore{
-	display: block;
-
-	width: 100px;
-	padding: 8.5px 10px;
-	margin: 0;
+	font-weight: bold;
 	background-color:#E59866;
-
 	color: white;
-	border-radius: 10px;
+	font-size: 16px;
 
-	font-size: 14px;
-	text-align:left;
-
+	width: 80px;
+	height: 80px;
+	margin-bottom: 20px;
+	line-height: 40px;
+	border-radius: 6px;
+	text-align: center;
+	right: 5%;
 	position: absolute;
-	top: 120%;
-	left:55%;
+
+	margin-top: 30px;
 }
 
-header #newgamebutton:hover{
+#newgamebutton:hover,#versions:hover{
 	background-color: #9f8b77;
 }
 
@@ -63,13 +82,7 @@ header p{
 }
 
 #grid-container{
-	/*
-	width: 460px;
-	height:460px;
-	padding: 20px;
-	*/
-
-	margin: 60px auto;
+	margin: 0 auto;
 	margin-bottom: 20px;
 	background-color: #bbada0;
 
@@ -78,14 +91,7 @@ header p{
 }
 
 .grid-cell{
-	/*
-	width: 100px;
-	height: 100px;
-
-	border-radius: 6px;
-	*/
 	background-color: #ccc0b3;
-
 	position: absolute;
 }
 
@@ -101,9 +107,7 @@ header p{
 
 #addscore{
 	position: absolute;
-
-	top: 90%;
-	left:61%;
+	right:20%;
 
 	font-size: 30px;
 	font-weight: 700;
@@ -198,3 +202,93 @@ input {
 }
 
 #contact-submit:active { box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5); }
+
+/*版本选择*/
+#versionsselect{
+	width: 100%;
+	height: 100%;
+	top: -100%;
+    left: 0;
+	position: fixed;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	background-color: rgba(28,28,28,0.8);
+}
+
+#versions1{
+	top: 40%;
+
+}
+
+#versions2{
+	top: 50%;
+}
+
+#versions3{
+	top:60%;
+}
+
+#versions1,
+#versions2,
+#versions3{
+	cursor:pointer;
+
+	width: 150px;
+	height: 30px;
+
+	background:#F9BF45;
+	border:none;
+	border-radius: 6px;
+
+	/*居中方法*/
+	left: 20%;
+	right: 20%;
+	margin: 0 auto;
+	position: absolute;
+}
+
+#versions1:hover,
+#versions2:hover,
+#versions3:hover{
+	background:#FC9F4D;
+}
+
+#versions1:active,
+#versions2:active,
+#versions3:active{
+	box-shadow:inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/*关闭图标*/
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+    background: red;
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px 0px black;
+    cursor: pointer;
+}
+.close:before {
+    position: absolute;
+    content: '';
+    width: 30px;
+    height: 10px;
+    background: white;
+    transform: rotate(45deg);
+    top: 20px;
+    left: 10px;
+}
+.close:after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 10px;
+    background: white;
+    transform: rotate(-45deg);
+    top: 20px;
+    left: 10px;
+}

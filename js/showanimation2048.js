@@ -42,7 +42,7 @@ function showAddAnimation(score){
 
 	//显示加分
 	if(score!=0){
-		addscore.css('top',"90%");
+		addscore.css('top',70);
 		addscore.css("color",'#7F8C8D');
 		addscore.text("+"+score);
 	}

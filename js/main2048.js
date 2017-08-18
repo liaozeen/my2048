@@ -15,6 +15,11 @@ var viewboard = {
     1024:1024,
     2048:2048,
 };
+var dynasty = ['三皇五帝','夏商西周','春秋战国','秦汉三国','西晋东晋',
+                '南北朝','隋唐','五代十国','宋辽西夏','金元明清','中华民国'];
+var lzcva = ['教学部','实践部','宣传部','外联部','人资部',
+                '秘书部','主席团','雷大志联','始于2005','返乡志愿','服务雷州'];
+
 var score = 0;
 //存储每次移动后score增加部分的分数
 var added = 0;
@@ -58,6 +63,48 @@ function newgame(){
     generateOneNumber();
     generateOneNumber();
 }
+
+/**** 版本切换 ****/
+//打开版本切换页面
+function updateversion(){
+    $('#versionsselect').css('top',0);
+}
+
+//关闭版本切换页面
+$('.close').click(function(){
+    $('#versionsselect').css('top','-100%');
+});
+
+//选择2048原版
+$('#versions1').click(function(){
+    for(var i=1;i<=11;i++){
+        viewboard[Math.pow(2,i)] = Math.pow(2,i);
+    }
+    newgame();
+        console.log(viewboard)
+    $('#versionsselect').css('top','-100%');
+});
+
+//选择朝代版
+$('#versions2').click(function(){
+    for(var i=1;i<=11;i++){
+        viewboard[Math.pow(2,i)] = dynasty[i-1];
+    }
+    newgame();
+    console.log(viewboard)
+    $('#versionsselect').css('top','-100%');
+});
+
+//选择雷大志联版
+$('#versions3').click(function(){
+    for(var i=1;i<=11;i++){
+        viewboard[Math.pow(2,i)] = lzcva[i-1];
+    }
+    newgame()
+    console.log(viewboard)
+    $('#versionsselect').css('top','-100%');
+});
+
 
 function init(){
     //生成16个背景格子
@@ -114,6 +161,7 @@ function updateBoardView(){
             else{
                 theNumberCell.css('width',cellSideLength);
                 theNumberCell.css('height',cellSideLength);
+
                 theNumberCell.css('top',getPosTop(i,j));
                 theNumberCell.css('left',getPosLeft(i,j));
                 //根据不同的值设置不同的背景色和文字颜色
