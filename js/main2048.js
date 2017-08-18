@@ -105,6 +105,11 @@ $('#versions3').click(function(){
     $('#versionsselect').css('top','-100%');
 });
 
+//日夜间模式切换
+$('h1').click(function() {
+    nightmode();
+});
+
 
 function init(){
     //生成16个背景格子

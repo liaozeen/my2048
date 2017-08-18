@@ -28,7 +28,13 @@ h1{
 	left: 5%;
 
 	position: absolute;
+	cursor:pointer;
+}
 
+.cover{
+    position:fixed;
+    outline:5000px solid rgba(0, 0, 0, 0);
+    z-index: 1;
 }
 
 #versions,#newgamebutton{

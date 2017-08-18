@@ -164,7 +164,17 @@ function formsubmit(){
 	    var val = $(inputid).val();
 	    viewboard[Math.pow(2,i)] = val;
     }
-
-    console.log(viewboard);
     return false;
+}
+
+function nightmode(){
+	if($('.cover').css('z-index')==1){
+		//夜间模式
+		$('.cover').css('outline-color','rgba(0, 0, 0, 0.4)');
+		$('.cover').css('z-index',2);
+	}else{
+		//日间模式
+		$('.cover').css('outline-color','rgba(0, 0, 0, 0)');
+		$('.cover').css('z-index',1);
+	}
 }
