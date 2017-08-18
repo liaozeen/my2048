@@ -59,6 +59,7 @@ function prepareForMobile(){
 function newgame(){
     //初始化棋盘格
     init();
+
     //在随机两个格子生成数字
     generateOneNumber();
     generateOneNumber();
@@ -139,6 +140,7 @@ function init(){
     updateBoardView();
 
     score = 0;
+    updateScore(score);
 }
 
 function updateBoardView(){
