@@ -82,7 +82,7 @@ $('#versions1').click(function(){
         viewboard[Math.pow(2,i)] = Math.pow(2,i);
     }
     newgame();
-        console.log(viewboard)
+
     $('#versionsselect').css('top','-100%');
 });
 
@@ -92,7 +92,7 @@ $('#versions2').click(function(){
         viewboard[Math.pow(2,i)] = dynasty[i-1];
     }
     newgame();
-    console.log(viewboard)
+
     $('#versionsselect').css('top','-100%');
 });
 
@@ -102,7 +102,7 @@ $('#versions3').click(function(){
         viewboard[Math.pow(2,i)] = lzcva[i-1];
     }
     newgame()
-    console.log(viewboard)
+
     $('#versionsselect').css('top','-100%');
 });
 
