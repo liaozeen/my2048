@@ -7,7 +7,8 @@
 - 游戏链接：[进入游戏](https://liaozeen.github.io/my2048/)
 
 - 扫描二维码进入
-![2048游戏二维码](image/2048play.png)
+
+   ![2048游戏二维码](image/2048play.png)
 
 ### 游戏规则
  - 通过方向键或手指滑动控制小方块的移动方向
@@ -18,24 +19,23 @@
 ### 游戏功能
 #### 1.点击左上角的【DIY 2048】可自由切换日夜间模式
 日间模式（默认）
-![日间模式](image/01.jpg =200*355)
+![日间模式](image/01.jpg)
 
 夜间模式
-![夜间模式](image/02.jpg =200*355)
+![夜间模式](image/02.jpg)
 
 #### 2.点击【新游戏】，重新开始游戏
 #### 3.点击【切换版本】，可选择其他版本玩
 ![切换版本](image/03.jpg)
 朝代版
-![朝代版](image/04.jpg =200*355)
+![朝代版](image/04.jpg)
 
+[雷大志联版](http://mp.weixin.qq.com/s?__biz=MzA4NjQ3MTgwOA==&mid=200123656&idx=1&sn=075ae2bd544cfd4734e22f90f0f78f2d&mpshare=1&scene=23&srcid=0818uu8LdP1uAz4QxIQ4v4WL#rd)）
+![雷大志联版](image/05.jpg)
 
-雷大志联（全称：[雷州市大学生志愿者联合会](http://mp.weixin.qq.com/s?__biz=MzA4NjQ3MTgwOA==&mid=200123656&idx=1&sn=075ae2bd544cfd4734e22f90f0f78f2d&mpshare=1&scene=23&srcid=0818uu8LdP1uAz4QxIQ4v4WL#rd)）是一个地域性的大学生公益组织，在大学期间的大部分时间都贡献给这个组织。所以，特意做了这个版本，留个念想。
-
-![雷大志联版](image/05.jpg =200*355)
 
 #### 点击【点击自定义你的2048】，可自己设计2048的内容
-![自定义2048](image/06.jpg =200*355)
+![自定义2048](image/06.jpg)
 
 ### 学习资源
 - [慕课网2048私人定制](http://www.imooc.com/learn/76)
